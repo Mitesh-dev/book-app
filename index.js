@@ -9,7 +9,7 @@ app.use(express.json())
 app.use("/api/books", bookRoute);
 app.use("/api/chapters", chapterRoute);
 
-mongoose.connect(process.env.MONGODB_URL)
+const obj = mongoose.connect(process.env.MONGODB_URL)
 
 const port = 2001
 app.listen(port, () => {
