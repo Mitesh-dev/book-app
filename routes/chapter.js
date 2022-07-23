@@ -1,15 +1,15 @@
 const express = require("express")
 const route = express.Router()
-const chapterController = require("../controller/chapter")
+const { createChapter, fetchChapter, fetchChapterById, deleteChapter, updateChapter } = require("../controller/chapter")
 
-route.post("/", chapterController.createChapter)
+route.post("/", createChapter)
 
-route.get("/", chapterController.fetchChapter)
+route.get("/", fetchChapter)
 
-route.get("/:id", chapterController.fetchChapterById)
+route.get("/:id", fetchChapterById)
 
-route.delete("/:id", chapterController.deleteChapter)
+route.delete("/:id", deleteChapter)
 
-route.put("/:id", chapterController.updateChapter)
+route.put("/:id", updateChapter)
 
 module.exports = route
